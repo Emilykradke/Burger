@@ -1,0 +1,31 @@
+<h2>Add an item to your to do list and hit Submit</h2>
+
+<form class="create-form">
+    <div class="form-group">
+        <input type="text" id="todo-input" name="todo">
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<h2>To Dos</h2>
+
+<ul>
+    {{#each todos}}
+        {{#unless done}}
+            {{> todos/todo-block}}
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Done</h2>
+
+<ul>
+    {{#each todos}}
+        {{#if this.done}}
+            <li>
+                {{todo}}
+            </li>
+        {{/if}}
+    {{/each}}
+</ul>
